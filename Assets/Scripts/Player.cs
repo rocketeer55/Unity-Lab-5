@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     void Update() {
         transform.position = new Vector2(xPos, transform.position.y);
         if (Input.GetKey(KeyCode.Space)) {
-            rb2d.AddForce(new Vector2(0, upForce));
+            rb2d.AddForce(new Vector2(0, upForce * Time.deltaTime));
         }
 
         if (rb2d.velocity.y > maxVelocity) {
