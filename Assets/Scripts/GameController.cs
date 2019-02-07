@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour {
     public GameObject shieldPrefab;
     public GameObject coinPrefab;
     public GameObject gameOverText;
+
+    public AudioSource audio;
     public Text scoreText;
     public bool gameOver = false;
     
@@ -44,6 +46,7 @@ public class GameController : MonoBehaviour {
     public void GhostDied() {
         gameOverText.SetActive(true);
         gameOver = true;
+        audio.Pause();
     }
 
     public void GhostScored() {
