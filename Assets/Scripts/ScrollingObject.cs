@@ -10,8 +10,10 @@ public class ScrollingObject : MonoBehaviour {
         rb2d = GetComponent<Rigidbody2D>();
         rb2d.velocity = new Vector2(speed, 0);
     }
-    void Update()
-    {
-        
+
+    void Update() {
+        if (GameController.instance.gameOver) {
+            rb2d.velocity = Vector2.zero;
+        }
     }
 }
